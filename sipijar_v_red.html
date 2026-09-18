@@ -1,0 +1,924 @@
+<!DOCTYPE html>
+
+<html lang="id"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>SI-PIJAR Tanjungpinang - Command Center PJU Terukur</title><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@500;700&amp;family=Plus+Jakarta+Sans:wght@600;700;800&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "on-tertiary-fixed-variant": "#5a2d28", "inverse-surface": "#362225", "primary": "#7a1c28", "primary-container": "#4c0f17", "surface-container-high": "#f0e3e5", "surface-bright": "#faf6f7", "on-primary-fixed": "#38060e", "on-background": "#231517", "primary-fixed-dim": "#f1b3ba", "on-primary": "#ffffff", "tertiary-container": "#421815", "on-secondary-fixed": "#3a1318", "secondary": "#9c2a39", "outline-variant": "#dcc8ca", "on-secondary-container": "#4e1019", "tertiary": "#8c443b", "error": "#991b1b", "tertiary-fixed": "#ffd8d4", "on-surface-variant": "#5d4447", "on-secondary": "#ffffff", "background": "#fdfbfb", "on-primary-container": "#f6c8ce", "outline": "#8a7073", "inverse-primary": "#f8c5cb", "secondary-fixed-dim": "#f5b7be", "tertiary-fixed-dim": "#e9a79f", "on-error": "#ffffff", "error-container": "#fee2e2", "surface": "#fdfbfb", "surface-tint": "#8c2836", "surface-container-lowest": "#ffffff", "primary-fixed": "#fde4e7", "on-tertiary": "#ffffff", "surface-container-highest": "#e8d8da", "surface-container": "#f5ebec", "on-primary-fixed-variant": "#631721", "surface-dim": "#ded0d2", "on-error-container": "#7f1d1d", "surface-variant": "#ebd9dc", "on-tertiary-container": "#f5bcb4", "inverse-on-surface": "#fdf5f5", "on-surface": "#231517", "on-tertiary-fixed": "#370f0b", "secondary-fixed": "#fde2e5", "on-secondary-fixed-variant": "#6e1d27", "secondary-container": "#c94657", "surface-container-low": "#faf1f2" }, "borderRadius": { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" }, "spacing": { "margin": "1rem", "space-xs": "0.25rem", "space-xl": "1.5rem", "gutter-tablet": "1.25rem", "space-2xs": "0.125rem", "space-lg": "1rem", "margin-desktop": "2rem", "gutter-desktop": "1.5rem", "space-3xl": "3rem", "space-sm": "0.5rem", "margin-tablet": "1.5rem", "space-2xl": "2rem", "space-md": "0.75rem", "gutter": "1rem" }, "fontFamily": { "body-lg": [ "Inter" ], "telemetry-data": [ "JetBrains Mono" ], "label-md": [ "Inter" ], "headline-xl": [ "Plus Jakarta Sans" ], "headline-lg": [ "Plus Jakarta Sans" ], "display-lg": [ "Plus Jakarta Sans" ], "body-md": [ "Inter" ], "headline-sm": [ "Plus Jakarta Sans" ], "body-sm": [ "Inter" ], "display-lg-mobile": [ "Plus Jakarta Sans" ], "label-lg": [ "Inter" ], "caption": [ "Inter" ], "telemetry-unit": [ "JetBrains Mono" ] }, "fontSize": { "body-lg": [ "16px", { "lineHeight": "24px", "fontWeight": "400" } ], "telemetry-data": [ "24px", { "lineHeight": "28px", "letterSpacing": "-0.03em", "fontWeight": "700" } ], "label-md": [ "12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500" } ], "headline-xl": [ "28px", { "lineHeight": "36px", "letterSpacing": "-0.015em", "fontWeight": "700" } ], "headline-lg": [ "22px", { "lineHeight": "30px", "letterSpacing": "-0.01em", "fontWeight": "700" } ], "display-lg": [ "40px", { "lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "800" } ], "body-md": [ "14px", { "lineHeight": "20px", "fontWeight": "400" } ], "headline-sm": [ "18px", { "lineHeight": "26px", "letterSpacing": "-0.005em", "fontWeight": "600" } ], "body-sm": [ "12px", { "lineHeight": "18px", "fontWeight": "400" } ], "display-lg-mobile": [ "30px", { "lineHeight": "38px", "letterSpacing": "-0.02em", "fontWeight": "800" } ], "label-lg": [ "14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600" } ], "caption": [ "11px", { "lineHeight": "14px", "letterSpacing": "0.03em", "fontWeight": "500" } ], "telemetry-unit": [ "12px", { "lineHeight": "16px", "letterSpacing": "0.04em", "fontWeight": "500" } ] } } } };</script></head><body class="bg-background font-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-full w-72 bg-surface-container-lowest z-50 flex flex-col justify-between shadow-[0_1px_8px_rgba(122,28,40,0.06)] border-r border-outline-variant/40"><div class="flex flex-col"><div class="p-space-lg flex flex-col gap-space-sm bg-surface-container-low border-b border-outline-variant/30"><div class="flex items-center gap-space-sm"><img alt="Logo SI-PIJAR Tanjungpinang" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1VRPgZnJjpZSNXa_OQrNMQYs_2LBm8ywp9aoZKYzF_09hkfq2KkW1RkEpIUAp6JCvGWz1LnIS8AW70NpAEnfbJcfG4Z-n85iFY3_SkfC3PhC4ARwsy2VLc3N1ta0uh60M6F4rZoSshbg2nq59nVCBwJqnPuKMtI_NlwVkR3jwFlqCm6Hl2SUR4wry3rLVKXdLvUJqn6oeftAi_Di5ZptV2ibAAaGk0MERAqKSqrHAuhvJ4gw4mLAxdahw"/><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-on-surface tracking-tight leading-none">SI-PIJAR</span><span class="font-caption text-caption text-secondary font-semibold uppercase tracking-wider">Tanjungpinang</span></div></div><div class="flex flex-wrap gap-space-2xs pt-space-2xs"><span class="inline-flex items-center px-space-xs py-space-2xs rounded bg-surface-container-highest text-on-primary-fixed-variant font-caption text-caption uppercase">Dishub Kota Tanjungpinang</span><span class="inline-flex items-center px-space-xs py-space-2xs rounded bg-secondary-fixed text-on-secondary-fixed font-caption text-caption font-semibold">Command Center PJU</span></div></div><div class="px-space-md py-space-sm"><span class="font-caption text-caption text-on-surface-variant uppercase tracking-wider font-semibold">Modul Operasional</span></div><nav class="flex flex-col gap-space-2xs px-space-md" data-active-classes="bg-primary-container text-on-primary font-label-lg text-label-lg rounded-lg"><a aria-current="page" class="flex items-center gap-space-sm px-space-md py-space-sm transition-all bg-primary text-on-primary font-label-lg text-label-lg rounded-lg shadow-sm" data-path="dashboard-monitoring" href="#"><span class="material-symbols-outlined text-[20px]">dashboard</span><span>Dashboard Monitoring</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface font-label-md text-label-md transition-all" data-path="peta-sebaran-lampu" href="#"><span class="material-symbols-outlined text-[20px]">map</span><span>Peta Sebaran Lampu</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface font-label-md text-label-md transition-all" data-path="data-idpel-meterisasi" href="#"><span class="material-symbols-outlined text-[20px]">electric_meter</span><span>Data IDPEL &amp; Meterisasi</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface font-label-md text-label-md transition-all" data-path="analisis-efisiensi-anggaran" href="#"><span class="material-symbols-outlined text-[20px]">query_stats</span><span>Analisis Efisiensi Anggaran</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface font-label-md text-label-md transition-all" data-path="laporan-audit" href="#"><span class="material-symbols-outlined text-[20px]">fact_check</span><span>Laporan &amp; Audit</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface font-label-md text-label-md transition-all" data-path="manajemen-aset-pju" href="#"><span class="material-symbols-outlined text-[20px]">light</span><span>Manajemen Aset PJU</span></a></nav></div><div class="p-space-md bg-surface-container-low border-t border-outline-variant/30"><div class="flex items-center gap-space-sm p-space-sm rounded-lg bg-surface-container-lowest shadow-[0_1px_8px_rgba(122,28,40,0.04)] border border-outline-variant/40"><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center flex-shrink-0"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div><div class="flex flex-col min-w-0 flex-1"><span class="font-label-md text-label-md text-on-surface truncate font-semibold">Admin Dishub</span><span class="font-caption text-caption text-on-surface-variant truncate">Kota Tanjungpinang</span></div><span class="material-symbols-outlined text-secondary text-[18px]">verified_user</span></div></div></aside><div class="pl-72"><header class="fixed top-0 left-72 right-0 h-16 bg-surface/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(122,28,40,0.04)] border-b border-outline-variant/40 z-40 flex items-center justify-between px-space-xl"><div class="flex items-center gap-space-lg"><div class="inline-flex items-center gap-space-xs px-space-sm py-space-2xs rounded bg-surface-container-lowest shadow-[0_1px_8px_rgba(122,28,40,0.04)] border border-outline-variant/40"><span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span><span class="font-caption text-caption text-on-surface-variant font-semibold uppercase">SCADA:</span><span class="font-caption text-caption text-secondary font-bold uppercase">Online</span></div><div class="inline-flex items-center gap-space-xs text-on-surface-variant"><span class="material-symbols-outlined text-[16px] text-primary">schedule</span><span class="font-telemetry-unit text-telemetry-unit font-semibold">19:42:08 WIB</span><span class="font-caption text-caption text-on-primary-fixed-variant">(Tanjungpinang)</span></div></div><div class="flex items-center gap-space-md"><div class="inline-flex items-center gap-space-xs bg-surface-container-lowest px-space-sm py-space-xs rounded-lg shadow-[0_1px_8px_rgba(122,28,40,0.04)] border border-outline-variant/40"><span class="material-symbols-outlined text-[16px] text-secondary">location_on</span><label class="sr-only" for="quick-district">Pilih Kecamatan</label><select class="bg-transparent font-label-md text-label-md text-on-surface focus:outline-none cursor-pointer" id="quick-district"><option value="all">Semua Kecamatan</option><option value="tpi-barat">Kec. Tanjungpinang Barat</option><option value="tpi-timur">Kec. Tanjungpinang Timur</option><option value="tpi-kota">Kec. Tanjungpinang Kota</option><option value="bukit-bestari">Kec. Bukit Bestari</option></select></div><div class="relative flex items-center justify-center"><button aria-label="Pemberitahuan Sistem" class="p-space-xs rounded-lg hover:bg-surface-container-high hover:text-on-surface text-on-surface-variant transition-colors" type="button"><span class="material-symbols-outlined text-[22px]">notifications</span></button><span class="absolute -top-1 -right-1 w-4 h-4 rounded-full bg-primary text-on-primary font-caption text-[9px] flex items-center justify-center font-bold">3</span></div><div class="h-6 w-px bg-outline-variant/60"></div><div class="flex items-center gap-space-sm"><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div><div class="hidden xl:flex flex-col text-left"><span class="font-label-md text-label-md text-on-surface font-semibold leading-tight">Admin Dishub</span><span class="font-caption text-caption text-on-surface-variant leading-tight">Super Operator</span></div></div></div></header><main class="w-full pt-16 bg-surface px-space-xl py-space-lg"><div class="flex flex-col w-full gap-space-xl">
+<!-- 1. TOP HEADER & FILTER BAR -->
+<section class="flex flex-col gap-space-lg bg-surface-container-lowest p-space-xl rounded-xl shadow-sm border border-outline-variant/40">
+<div class="flex flex-col xl:flex-row xl:items-center justify-between gap-space-lg">
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center gap-space-sm">
+<span class="inline-flex items-center px-space-xs py-space-2xs rounded bg-secondary-fixed text-on-secondary-fixed font-caption text-caption uppercase font-semibold">
+            Dishub Kota Tanjungpinang • Command Center
+          </span>
+<span class="inline-flex items-center gap-space-2xs px-space-xs py-space-2xs rounded bg-surface-container-high text-on-surface font-caption text-caption">
+<span class="w-2 h-2 rounded-full bg-secondary animate-ping"></span>
+            Realtime IoT Telemetry
+          </span>
+</div>
+<h1 class="font-headline-xl text-headline-xl text-on-surface tracking-tight">
+          Pusat Kendali &amp; Monitoring PJU Terukur Kota Tanjungpinang
+        </h1>
+<p class="font-body-md text-body-md text-on-surface-variant">
+          Sistem Informasi dan Pengendalian Jaringan Penerangan Jalan Umum Terukur (SI-PIJAR) Terintegrasi PLN UID Riau &amp; Kepri
+        </p>
+</div>
+<div class="flex flex-wrap items-center gap-space-sm">
+<button class="inline-flex items-center gap-space-xs bg-surface-container hover:bg-surface-container-high text-on-surface px-space-md py-space-sm rounded-lg font-label-md text-label-md transition-all border border-outline-variant/50" type="button">
+<span class="material-symbols-outlined text-[18px] text-secondary">sync</span>
+<span>Sinkronisasi PLN UID Riau &amp; Kepri</span>
+</button>
+<button class="inline-flex items-center gap-space-xs bg-primary hover:bg-primary-container text-on-primary px-space-md py-space-sm rounded-lg font-label-md text-label-md transition-all shadow-sm" type="button">
+<span class="material-symbols-outlined text-[18px]">download</span>
+<span>Export Laporan PDF/Excel</span>
+</button>
+</div>
+</div>
+<!-- Quick Control Filter Bar -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-space-md pt-space-xs">
+<!-- Filter Periode -->
+<div class="flex flex-col gap-space-2xs bg-surface-container-low p-space-sm rounded-lg border border-outline-variant/30">
+<label class="font-caption text-caption text-on-surface-variant font-semibold uppercase" for="filter-periode">Periode Anggaran</label>
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-secondary text-[18px]">calendar_today</span>
+<select class="w-full bg-transparent font-label-md text-label-md text-on-surface focus:outline-none cursor-pointer" id="filter-periode">
+<option value="2025">Tahun Anggaran 2025 (Berjalan)</option>
+<option selected="" value="2024">Tahun Anggaran 2024 (Realisasi Penuh)</option>
+<option value="2023">Tahun Anggaran 2023 (Baseline)</option>
+</select>
+</div>
+</div>
+<!-- Filter Kecamatan -->
+<div class="flex flex-col gap-space-2xs bg-surface-container-low p-space-sm rounded-lg border border-outline-variant/30">
+<label class="font-caption text-caption text-on-surface-variant font-semibold uppercase" for="filter-kecamatan">Wilayah Kecamatan</label>
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-secondary text-[18px]">domain</span>
+<select class="w-full bg-transparent font-label-md text-label-md text-on-surface focus:outline-none cursor-pointer" id="filter-kecamatan">
+<option value="all">Semua Kecamatan (Kota Tanjungpinang)</option>
+<option value="bukit-bestari">Kecamatan Bukit Bestari</option>
+<option value="tpi-timur">Kecamatan Tanjungpinang Timur</option>
+<option value="tpi-kota">Kecamatan Tanjungpinang Kota</option>
+<option value="tpi-barat">Kecamatan Tanjungpinang Barat</option>
+</select>
+</div>
+</div>
+<!-- Filter Status IDPEL -->
+<div class="flex flex-col gap-space-2xs bg-surface-container-low p-space-sm rounded-lg border border-outline-variant/30">
+<label class="font-caption text-caption text-on-surface-variant font-semibold uppercase" for="filter-status">Status Meterisasi Gardu</label>
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-secondary text-[18px]">electric_meter</span>
+<select class="w-full bg-transparent font-label-md text-label-md text-on-surface focus:outline-none cursor-pointer" id="filter-status">
+<option value="all">Semua Status (1.482 IDPEL)</option>
+<option value="terukur">Sudah Meterisasi kWh (78,0%)</option>
+<option value="abonemen">Non-Meter / Flat Abonemen (22,0%)</option>
+</select>
+</div>
+</div>
+<!-- Filter Tipe Beban / Jaringan -->
+<div class="flex flex-col gap-space-2xs bg-surface-container-low p-space-sm rounded-lg border border-outline-variant/30">
+<label class="font-caption text-caption text-on-surface-variant font-semibold uppercase" for="filter-operasional">Status Operasional PJU</label>
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-secondary text-[18px]">lightbulb</span>
+<select class="w-full bg-transparent font-label-md text-label-md text-on-surface focus:outline-none cursor-pointer" id="filter-operasional">
+<option value="all">Seluruh Jaringan Normal (98,2%)</option>
+<option value="gangguan">Dalam Perbaikan / Padam (16 Titik)</option>
+<option value="smart-timer">Terjadwal Smart Dimming</option>
+</select>
+</div>
+</div>
+</div>
+</section>
+<!-- 2. KEY KPI METRIC CARDS -->
+<section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-space-md">
+<!-- Card 1: Total IDPEL -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm border border-outline-variant/40 flex flex-col justify-between hover:shadow-md transition-all relative overflow-hidden group">
+<div class="absolute -right-6 -bottom-6 w-24 h-24 bg-surface-container rounded-full opacity-60 group-hover:scale-125 transition-transform duration-500"></div>
+<div class="flex items-center justify-between">
+<span class="font-body-sm text-body-sm text-on-surface-variant uppercase font-semibold">Total IDPEL PLN</span>
+<span class="p-space-xs rounded-lg bg-surface-container text-secondary flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">hub</span>
+</span>
+</div>
+<div class="mt-space-md mb-space-sm flex items-baseline justify-between">
+<div class="font-telemetry-data text-display-lg text-on-surface font-bold">1.482</div>
+<span class="inline-flex items-center px-space-xs py-space-2xs rounded bg-surface-container-high text-on-primary-fixed-variant font-caption text-caption font-semibold">
+          +24 Baru TA 2024
+        </span>
+</div>
+<div class="flex flex-col gap-space-2xs">
+<span class="font-caption text-caption text-on-surface-variant">Tersebar di 4 Kecamatan • 18 Kelurahan</span>
+<div class="w-full h-1.5 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-secondary rounded-full" style="width: 100%;"></div>
+</div>
+</div>
+</div>
+<!-- Card 2: Jumlah Titik Lampu -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm border border-outline-variant/40 flex flex-col justify-between hover:shadow-md transition-all relative overflow-hidden group">
+<div class="absolute -right-6 -bottom-6 w-24 h-24 bg-secondary-fixed/50 rounded-full opacity-50 group-hover:scale-125 transition-transform duration-500"></div>
+<div class="flex items-center justify-between">
+<span class="font-body-sm text-body-sm text-on-surface-variant uppercase font-semibold">Jumlah Titik Lampu PJU</span>
+<span class="p-space-xs rounded-lg bg-surface-container text-secondary flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">wb_incandescent</span>
+</span>
+</div>
+<div class="mt-space-md mb-space-sm flex items-baseline justify-between">
+<div class="font-telemetry-data text-display-lg text-on-surface font-bold">8.940</div>
+<span class="inline-flex items-center px-space-xs py-space-2xs rounded bg-secondary-fixed text-on-secondary-fixed font-caption text-caption font-bold">
+          98,2% Menyala
+        </span>
+</div>
+<div class="flex flex-col gap-space-2xs">
+<div class="flex items-center justify-between font-caption text-caption text-on-surface-variant">
+<span>LED Smart: 68,5%</span>
+<span>Son-T: 9,7%</span>
+</div>
+<div class="w-full h-1.5 bg-surface-container rounded-full overflow-hidden flex">
+<div class="h-full bg-secondary-container" style="width: 68.5%;"></div>
+<div class="h-full bg-secondary" style="width: 21.8%;"></div>
+<div class="h-full bg-tertiary-fixed-dim" style="width: 9.7%;"></div>
+</div>
+</div>
+</div>
+<!-- Card 3: IDPEL Sudah Meterisasi -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm border border-outline-variant/40 flex flex-col justify-between hover:shadow-md transition-all relative overflow-hidden group">
+<div class="absolute -right-6 -bottom-6 w-24 h-24 bg-surface-container-highest rounded-full opacity-60 group-hover:scale-125 transition-transform duration-500"></div>
+<div class="flex items-center justify-between">
+<span class="font-body-sm text-body-sm text-on-surface-variant uppercase font-semibold">IDPEL Sudah Meterisasi</span>
+<span class="p-space-xs rounded-lg bg-surface-container text-secondary flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">electric_meter</span>
+</span>
+</div>
+<div class="mt-space-md mb-space-sm flex items-baseline justify-between">
+<div class="font-telemetry-data text-display-lg text-primary font-bold">1.156</div>
+<span class="inline-flex items-center px-space-xs py-space-2xs rounded bg-surface-container-highest text-on-surface font-caption text-caption font-bold">
+          78,0% Terukur
+        </span>
+</div>
+<div class="flex flex-col gap-space-2xs">
+<div class="flex items-center justify-between font-caption text-caption text-on-surface-variant">
+<span>Target TA 2025: 100%</span>
+<span class="font-semibold text-secondary">Optimal Terkendali</span>
+</div>
+<div class="w-full h-1.5 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-secondary" style="width: 78%;"></div>
+</div>
+</div>
+</div>
+<!-- Card 4: IDPEL Belum Meterisasi -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm border border-outline-variant/40 flex flex-col justify-between hover:shadow-md transition-all relative overflow-hidden group">
+<div class="absolute -right-6 -bottom-6 w-24 h-24 bg-tertiary-fixed/40 rounded-full opacity-60 group-hover:scale-125 transition-transform duration-500"></div>
+<div class="flex items-center justify-between">
+<span class="font-body-sm text-body-sm text-on-surface-variant uppercase font-semibold">Non-Meter / Abonemen Flat</span>
+<span class="p-space-xs rounded-lg bg-surface-container text-on-surface-variant flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">pending_actions</span>
+</span>
+</div>
+<div class="mt-space-md mb-space-sm flex items-baseline justify-between">
+<div class="font-telemetry-data text-display-lg text-on-surface font-bold">326</div>
+<span class="inline-flex items-center px-space-xs py-space-2xs rounded bg-tertiary-fixed text-on-tertiary-fixed font-caption text-caption font-bold">
+          Target Migrasi Q3-Q4
+        </span>
+</div>
+<div class="flex flex-col gap-space-2xs">
+<div class="flex items-center justify-between font-caption text-caption text-on-surface-variant">
+<span>Sisa 22,0% Kontrak Daya</span>
+<span class="text-secondary font-medium">Beban Tagihan Flat</span>
+</div>
+<div class="w-full h-1.5 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-tertiary" style="width: 22%;"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- 3. SPECIAL SECTION: ANALISIS EFISIENSI & PENGHEMATAN ANGGARAN -->
+<section class="bg-primary-container text-on-primary rounded-xl p-space-xl shadow-lg border border-primary/40 relative overflow-hidden">
+<!-- Subtle luminous background wave accent -->
+<div class="absolute -right-24 -top-24 w-96 h-96 bg-secondary-container/15 rounded-full blur-3xl pointer-events-none"></div>
+<div class="absolute -left-20 -bottom-20 w-80 h-80 bg-secondary/20 rounded-full blur-2xl pointer-events-none"></div>
+<div class="relative z-10 flex flex-col gap-space-xl">
+<!-- Section Headline & Audit Badge -->
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-md">
+<div class="flex flex-col gap-space-xs max-w-3xl">
+<div class="flex items-center gap-space-xs">
+<span class="inline-flex items-center gap-space-2xs px-space-sm py-space-2xs rounded bg-secondary text-on-secondary font-caption text-caption font-bold uppercase">
+<span class="material-symbols-outlined text-[14px]">savings</span>
+              Audit Efisiensi Belanja Energi
+            </span>
+<span class="inline-flex items-center px-space-sm py-space-2xs rounded bg-surface-container-high/20 text-on-primary font-caption text-caption">
+              Audit BPK &amp; Rekonsiliasi PLN Sesuai Standar Permendagri
+            </span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-on-primary tracking-tight">
+            Optimalisasi Belanja Rekening Listrik PJU Pemko Tanjungpinang Pasca Meterisasi Berkelanjutan
+          </h2>
+<p class="font-body-sm text-body-sm text-on-primary-container">
+            Perbandingan analitik riil antara skema pembayaran daya tak terukur (abonemen flat) dengan instalasi smart kWh meter terukur pada 1.156 IDPEL aktif.
+          </p>
+</div>
+<!-- Big Highlight Pill -->
+<div class="bg-surface-container-lowest/10 backdrop-blur-md p-space-lg rounded-xl flex flex-col items-start lg:items-end justify-center border border-white/10">
+<span class="font-caption text-caption text-on-primary-container uppercase font-semibold">Total Efisiensi Anggaran Kas Daerah</span>
+<div class="font-telemetry-data text-display-lg text-secondary-fixed-dim font-extrabold tracking-tight">
+            Rp 7,84 Miliar <span class="text-headline-sm text-on-primary font-body-md font-normal">/ Tahun</span>
+</div>
+<span class="inline-flex items-center gap-space-2xs text-secondary-fixed font-label-md text-label-md font-bold mt-space-2xs">
+<span class="material-symbols-outlined text-[16px]">trending_down</span>
+            Efisiensi 41,6% dari Pagu Semula
+          </span>
+</div>
+</div>
+<!-- Financial Metrics Grid -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-md">
+<!-- Sebelum Meterisasi -->
+<div class="bg-surface-container-lowest/5 backdrop-blur-sm p-space-md rounded-lg flex flex-col justify-between border border-white/5">
+<div class="flex items-center justify-between mb-space-sm">
+<span class="font-caption text-caption text-on-primary-container uppercase font-semibold">Biaya Sebelum Meterisasi (Flat/Abonemen)</span>
+<span class="material-symbols-outlined text-secondary-container text-[18px]">receipt_long</span>
+</div>
+<div class="font-telemetry-data text-headline-xl text-on-primary font-bold">
+            Rp 18,85 <span class="font-telemetry-unit text-telemetry-unit font-normal">Miliar / Thn</span>
+</div>
+<div class="font-caption text-caption text-on-primary-container mt-space-xs">
+            Rata-rata tagihan PLN: <strong class="text-on-primary font-telemetry-unit">Rp 1,57 Miliar / Bulan</strong> (Berdasarkan total kapasitas sambungan 24 jam)
+          </div>
+</div>
+<!-- Setelah Meterisasi -->
+<div class="bg-surface-container-lowest/5 backdrop-blur-sm p-space-md rounded-lg flex flex-col justify-between border border-white/5">
+<div class="flex items-center justify-between mb-space-sm">
+<span class="font-caption text-caption text-secondary-fixed uppercase font-semibold">Biaya Pasca Meterisasi Terukur</span>
+<span class="material-symbols-outlined text-secondary-fixed text-[18px]">verified</span>
+</div>
+<div class="font-telemetry-data text-headline-xl text-secondary-fixed font-bold">
+            Rp 11,01 <span class="font-telemetry-unit text-telemetry-unit font-normal">Miliar / Thn</span>
+</div>
+<div class="font-caption text-caption text-on-primary-container mt-space-xs">
+            Rata-rata tagihan PLN: <strong class="text-on-primary font-telemetry-unit">Rp 917,5 Juta / Bulan</strong> (Konsumsi riil sensor malam 12 jam)
+          </div>
+</div>
+<!-- Penghematan Rata-rata Bulanan -->
+<div class="bg-secondary/30 p-space-md rounded-lg flex flex-col justify-between border border-secondary/40">
+<div class="flex items-center justify-between mb-space-sm">
+<span class="font-caption text-caption text-secondary-fixed uppercase font-semibold">Penghematan Bulanan Rata-Rata</span>
+<span class="material-symbols-outlined text-secondary-fixed text-[18px]">account_balance_wallet</span>
+</div>
+<div class="font-telemetry-data text-headline-xl text-secondary-fixed font-bold">
+            Hemat Rp 653,5 <span class="font-telemetry-unit text-telemetry-unit font-normal">Juta / Bln</span>
+</div>
+<div class="font-caption text-caption text-on-primary-container mt-space-xs">
+            Dana dialihkan untuk pemeliharaan armatur LED &amp; penambahan 350 titik baru di wilayah pesisir.
+          </div>
+</div>
+</div>
+<!-- Comparison Chart: Jan to Dec -->
+<div class="bg-surface-container-lowest/5 p-space-lg rounded-xl flex flex-col gap-space-md border border-white/5">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm">
+<div class="flex flex-col">
+<span class="font-label-lg text-label-lg font-bold text-on-primary">Divergensi Beban Anggaran Bulanan (Januari – Desember 2024)</span>
+<span class="font-caption text-caption text-on-primary-container">Satuan: Miliar Rupiah (IDR). Pemantauan sinkron dengan billing PLN UID Riau &amp; Kepri</span>
+</div>
+<div class="flex items-center gap-space-md">
+<div class="flex items-center gap-space-xs">
+<span class="w-3 h-3 rounded bg-tertiary-fixed-dim"></span>
+<span class="font-caption text-caption text-on-primary-container">Sebelum (Rp 1,57 M)</span>
+</div>
+<div class="flex items-center gap-space-xs">
+<span class="w-3 h-3 rounded bg-secondary-fixed"></span>
+<span class="font-caption text-caption text-on-primary-container">Setelah (Rp 0,91 M)</span>
+</div>
+</div>
+</div>
+<!-- Inline SVG Visualization for Month-by-Month divergence -->
+<div class="w-full h-44 flex items-end">
+<svg class="w-full h-full overflow-visible" preserveaspectratio="none" viewbox="0 0 1000 160">
+<!-- Grid Lines -->
+<line stroke="rgba(255,255,255,0.08)" stroke-dasharray="4" x1="0" x2="1000" y1="20" y2="20"></line>
+<line stroke="rgba(255,255,255,0.08)" stroke-dasharray="4" x1="0" x2="1000" y1="70" y2="70"></line>
+<line stroke="rgba(255,255,255,0.08)" stroke-dasharray="4" x1="0" x2="1000" y1="120" y2="120"></line>
+<!-- Shaded Savings Area Between Before & After -->
+<polygon fill="rgba(245, 183, 190, 0.15)" points="40,30 120,30 200,30 280,30 360,30 440,30 520,30 600,30 680,30 760,30 840,30 920,30 920,118 840,115 760,112 680,108 600,102 520,100 440,96 360,98 280,105 200,108 120,112 40,115"></polygon>
+<!-- Before Meterization Line (Flat ~1.57 M) -->
+<polyline fill="none" points="40,30 120,30 200,30 280,30 360,30 440,30 520,30 600,30 680,30 760,30 840,30 920,30" stroke="#e9a79f" stroke-dasharray="6,4" stroke-width="2.5"></polyline>
+<!-- After Meterization Line (Measured ~0.91 M, declining slightly) -->
+<polyline fill="none" points="40,115 120,112 200,108 280,105 360,98 440,96 520,100 600,102 680,108 760,112 840,115 920,118" stroke="#fde2e5" stroke-width="3"></polyline>
+<!-- Data Dots for After Meterization -->
+<circle cx="40" cy="115" fill="#fde2e5" r="4"></circle>
+<circle cx="120" cy="112" fill="#fde2e5" r="4"></circle>
+<circle cx="200" cy="108" fill="#fde2e5" r="4"></circle>
+<circle cx="280" cy="105" fill="#fde2e5" r="4"></circle>
+<circle cx="360" cy="98" fill="#fde2e5" r="4"></circle>
+<circle cx="440" cy="96" fill="#fde2e5" r="4"></circle>
+<circle cx="520" cy="100" fill="#fde2e5" r="4"></circle>
+<circle cx="600" cy="102" fill="#fde2e5" r="4"></circle>
+<circle cx="680" cy="108" fill="#fde2e5" r="4"></circle>
+<circle cx="760" cy="112" fill="#fde2e5" r="4"></circle>
+<circle cx="840" cy="115" fill="#fde2e5" r="4"></circle>
+<circle cx="920" cy="118" fill="#fde2e5" r="4"></circle>
+</svg>
+</div>
+<!-- Month Labels -->
+<div class="grid grid-cols-12 text-center font-caption text-caption text-on-primary-container px-2">
+<span>Jan</span><span>Feb</span><span>Mar</span><span>Apr</span><span>Mei</span><span>Jun</span>
+<span>Jul</span><span>Agu</span><span>Sep</span><span>Okt</span><span>Nov</span><span>Des</span>
+</div>
+</div>
+</div>
+</section>
+<!-- 4. SEBARAN PETA TITIK LAMPU PJU KOTA TANJUNGPINANG (Rich GIS Map Container) -->
+<section class="flex flex-col gap-space-md bg-surface-container-lowest p-space-xl rounded-xl shadow-sm border border-outline-variant/40">
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-md">
+<div class="flex flex-col gap-space-2xs">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-secondary text-[22px]">map</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">
+            Peta Sebaran Titik Lampu &amp; Panel Gardu PJU Terukur
+          </h2>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">
+          Pusat Koordinat Pesisir Pulau Bintan: Selat Riau, Jembatan Dompak, Ring Road KM 8 – Bandara RHF
+        </span>
+</div>
+<!-- Map Legend -->
+<div class="flex flex-wrap items-center gap-space-md bg-surface-container-low p-space-sm rounded-lg border border-outline-variant/30">
+<div class="flex items-center gap-space-xs">
+<span class="w-3 h-3 rounded-full bg-secondary shadow-[0_0_8px_rgba(156,42,57,0.6)]"></span>
+<span class="font-caption text-caption text-on-surface font-medium">Meterisasi (Normal)</span>
+</div>
+<div class="flex items-center gap-space-xs">
+<span class="w-3 h-3 rounded-full bg-tertiary-fixed-dim"></span>
+<span class="font-caption text-caption text-on-surface font-medium">Non-Meter (Abonemen)</span>
+</div>
+<div class="flex items-center gap-space-xs">
+<span class="w-3 h-3 rounded-full bg-primary animate-ping"></span>
+<span class="font-caption text-caption text-primary font-bold">Lampu Padam (16 Titik)</span>
+</div>
+</div>
+</div>
+<!-- Map Canvas Wrapper -->
+<div class="relative w-full h-[520px] rounded-xl overflow-hidden bg-primary-container shadow-inner">
+<!-- GIS Map Background Representation -->
+<div class="w-full h-full bg-cover bg-center" data-location="Tanjung Pinang, Riau Islands, Indonesia" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAXF8vI7IP-UEZ0e8u9bzz_obaw7ztInlFRpoR2R1tq3S92dHbZ32PEEK7Cqqkg4N4OonyY1Aq_GM-KfD8PVbVHE3deT9ikdZyBuUbBKRUb9L5Y-XwO9Q8yreB1raJENEFoiLpxkTGpKKe4DHgf7Nqqrk6u5yC3xkvv3fMmmvy9TxqQ5LQzvIJ3_5RCesWCB_h1UNqRIs7_ThH5FtyrhmUeWSufbc6UEW1IJ5U9UtVJbeoL1N4lVn2O')"></div>
+<!-- Stylized Vector Overlays mimicking live electrical lines & coastal layout -->
+<div class="absolute inset-0 pointer-events-none">
+<svg class="w-full h-full" fill="none" viewbox="0 0 1200 650">
+<!-- Main Grid Routes: Tepi Laut to Dompak & KM Artery -->
+<path d="M 220 280 Q 320 240 450 310 T 680 340 T 890 310 T 1080 260" opacity="0.7" stroke="#c94657" stroke-dasharray="6,3" stroke-linecap="round" stroke-width="2.5"></path>
+<path d="M 450 310 L 480 480 L 590 560 L 710 540" opacity="0.8" stroke="#f1b3ba" stroke-linecap="round" stroke-width="2.5"></path>
+<path d="M 680 340 L 760 210 L 920 180" opacity="0.75" stroke="#e9a79f" stroke-linecap="round" stroke-width="2"></path>
+<path d="M 220 280 L 260 410 L 390 440" opacity="0.65" stroke="#c94657" stroke-width="2"></path>
+<!-- Zone Indicators -->
+<text fill="#ffffff" font-family="Plus Jakarta Sans" font-size="12" font-weight="700" letter-spacing="1" x="180" y="240">TEPI LAUT &amp; JL. POS</text>
+<text fill="#ffffff" font-family="Plus Jakarta Sans" font-size="12" font-weight="700" letter-spacing="1" x="590" y="585">KOMPLEKS PEMPROV DOMPAK</text>
+<text fill="#ffffff" font-family="Plus Jakarta Sans" font-size="12" font-weight="700" letter-spacing="1" x="820" y="160">BANDARA RHF &amp; KM 14</text>
+<text fill="#ffffff" font-family="Plus Jakarta Sans" font-size="12" font-weight="700" letter-spacing="1" x="640" y="325">JL. BASUKI RAHMAT / BUKIT BESTARI</text>
+<!-- Nodes: Active Burgundy / Ruby Nodes -->
+<circle class="animate-pulse" cx="220" cy="280" fill="#f1b3ba" r="5"></circle>
+<circle cx="280" cy="260" fill="#f1b3ba" r="4.5"></circle>
+<circle cx="340" cy="275" fill="#f1b3ba" r="4.5"></circle>
+<circle cx="450" cy="310" fill="#c94657" r="6"></circle>
+<circle cx="480" cy="480" fill="#f1b3ba" r="5.5"></circle>
+<circle cx="590" cy="560" fill="#c94657" r="6"></circle>
+<circle cx="680" cy="340" fill="#f1b3ba" r="7"></circle>
+<circle cx="750" cy="330" fill="#f1b3ba" r="5"></circle>
+<circle cx="890" cy="310" fill="#f1b3ba" r="5"></circle>
+<circle cx="1080" cy="260" fill="#f1b3ba" r="5"></circle>
+<!-- Nodes: Warm Terracotta Non-Meter Nodes -->
+<circle cx="760" cy="210" fill="#e9a79f" r="5"></circle>
+<circle cx="840" cy="195" fill="#e9a79f" r="5"></circle>
+<circle cx="920" cy="180" fill="#e9a79f" r="5"></circle>
+<circle cx="260" cy="410" fill="#e9a79f" r="5"></circle>
+<!-- Nodes: Fault Red Nodes -->
+<circle cx="390" cy="440" fill="#7a1c28" r="6"></circle>
+<circle cx="390" cy="440" opacity="0.85" r="12" stroke="#f1b3ba" stroke-width="1.5"></circle>
+<circle cx="710" cy="540" fill="#7a1c28" r="6"></circle>
+<circle cx="710" cy="540" opacity="0.85" r="12" stroke="#f1b3ba" stroke-width="1.5"></circle>
+</svg>
+</div>
+<!-- Quick Map Search & Layer Controls (Floating HUD) -->
+<div class="absolute top-space-md left-space-md flex flex-col gap-space-sm z-20 max-w-sm w-full">
+<div class="flex items-center gap-space-xs bg-surface-container-lowest/90 backdrop-blur-md px-space-md py-space-sm rounded-lg shadow-lg border border-outline-variant/40">
+<span class="material-symbols-outlined text-secondary text-[20px]">search</span>
+<input class="bg-transparent font-label-md text-label-md text-on-surface focus:outline-none w-full" placeholder="Cari IDPEL / Nama Ruas Jalan..." type="text" value="Basuki Rahmat"/>
+<button aria-label="Clear Search" class="text-on-surface-variant hover:text-on-surface" type="button">
+<span class="material-symbols-outlined text-[16px]">close</span>
+</button>
+</div>
+<div class="flex flex-wrap gap-space-2xs bg-surface-container-lowest/90 backdrop-blur-md p-space-xs rounded-lg shadow-lg border border-outline-variant/40">
+<button class="px-space-xs py-space-2xs rounded bg-primary text-on-primary font-caption text-caption font-semibold" type="button">Gardu Induk</button>
+<button class="px-space-xs py-space-2xs rounded bg-surface-container hover:bg-surface-container-high text-on-surface font-caption text-caption" type="button">Tiang PJU (8.940)</button>
+<button class="px-space-xs py-space-2xs rounded bg-surface-container hover:bg-surface-container-high text-on-surface font-caption text-caption" type="button">Kabel Jaringan</button>
+<button class="px-space-xs py-space-2xs rounded bg-surface-container hover:bg-surface-container-high text-on-surface font-caption text-caption" type="button">Heatmap Daya</button>
+</div>
+</div>
+<!-- Zoom & Compass Controls -->
+<div class="absolute top-space-md right-space-md flex flex-col gap-space-xs z-20">
+<button aria-label="Perbesar Peta" class="w-9 h-9 rounded-lg bg-surface-container-lowest/90 backdrop-blur-md hover:bg-surface-container text-on-surface flex items-center justify-center shadow-lg transition-all border border-outline-variant/40" type="button">
+<span class="material-symbols-outlined text-[20px]">add</span>
+</button>
+<button aria-label="Perkecil Peta" class="w-9 h-9 rounded-lg bg-surface-container-lowest/90 backdrop-blur-md hover:bg-surface-container text-on-surface flex items-center justify-center shadow-lg transition-all border border-outline-variant/40" type="button">
+<span class="material-symbols-outlined text-[20px]">remove</span>
+</button>
+<button aria-label="Pusatkan Ulang Peta" class="w-9 h-9 rounded-lg bg-surface-container-lowest/90 backdrop-blur-md hover:bg-surface-container text-on-surface flex items-center justify-center shadow-lg transition-all border border-outline-variant/40" type="button">
+<span class="material-symbols-outlined text-[20px]">my_location</span>
+</button>
+</div>
+<!-- Floating Map Tooltip/Card: Active Selected Node -->
+<div class="absolute bottom-space-md right-space-md z-20 max-w-sm w-full bg-primary-container/95 text-on-primary backdrop-blur-xl p-space-md rounded-xl shadow-2xl border border-outline-variant/20">
+<div class="flex items-center justify-between border-b border-surface-container-highest/20 pb-space-xs mb-space-sm">
+<div class="flex items-center gap-space-xs">
+<span class="w-2.5 h-2.5 rounded-full bg-secondary-fixed"></span>
+<span class="font-caption text-caption text-secondary-fixed uppercase font-bold tracking-wider">Panel Aktif Terukur</span>
+</div>
+<span class="font-caption text-caption text-on-primary-container">ID: TPI-BKT-042</span>
+</div>
+<div class="flex flex-col gap-space-xs">
+<span class="font-headline-sm text-headline-sm font-bold text-on-primary leading-snug">
+            Panel Gardu IDPEL 543100892110
+          </span>
+<span class="font-caption text-caption text-on-primary-container flex items-center gap-space-2xs">
+<span class="material-symbols-outlined text-[14px]">location_on</span>
+            Jl. Basuki Rahmat • Kec. Bukit Bestari
+          </span>
+</div>
+<div class="grid grid-cols-3 gap-space-xs mt-space-sm pt-space-xs border-t border-surface-container-highest/10">
+<div class="flex flex-col">
+<span class="font-caption text-caption text-on-primary-container">Beban Daya</span>
+<span class="font-telemetry-data text-label-lg text-secondary-fixed font-bold">4.8 kW</span>
+</div>
+<div class="flex flex-col">
+<span class="font-caption text-caption text-on-primary-container">Tegangan</span>
+<span class="font-telemetry-data text-label-lg text-on-primary font-bold">224 V</span>
+</div>
+<div class="flex flex-col">
+<span class="font-caption text-caption text-on-primary-container">Koneksi PJU</span>
+<span class="font-telemetry-data text-label-lg text-on-primary font-bold">34 Tiang</span>
+</div>
+</div>
+<div class="mt-space-sm pt-space-xs flex items-center justify-between">
+<span class="inline-flex items-center gap-space-2xs text-secondary-fixed font-caption text-caption">
+<span class="material-symbols-outlined text-[14px]">sensors</span>
+            Smart kWh Digital Online
+          </span>
+<button class="text-secondary-fixed hover:text-on-secondary font-label-md text-label-md font-semibold inline-flex items-center gap-space-2xs" type="button">
+            Detail Gardu <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- 5. CHART & GRAFIS RELEVAN -->
+<section class="grid grid-cols-1 lg:grid-cols-3 gap-space-md">
+<!-- Chart A: Realisasi Beban Tagihan PJU Perbandingan Bulanan -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm border border-outline-variant/40 flex flex-col justify-between lg:col-span-2">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm mb-space-md">
+<div class="flex flex-col">
+<h3 class="font-headline-sm text-headline-sm text-on-surface tracking-tight">
+            Tren Realisasi Tagihan Listrik PJU (Sebelum vs Setelah Meterisasi)
+          </h3>
+<span class="font-caption text-caption text-on-surface-variant">
+            Data audit belanja rekening listrik PJU Dishub Kota Tanjungpinang (dalam Miliar Rupiah)
+          </span>
+</div>
+<span class="inline-flex items-center px-space-xs py-space-2xs rounded bg-surface-container-high text-secondary font-caption text-caption font-bold">
+          Hemat Akumulasi Rp 7,84 M
+        </span>
+</div>
+<!-- Visual Bar comparison chart for 12 months -->
+<div class="w-full flex flex-col gap-space-sm pt-space-xs">
+<!-- SVG Dual Bars for months -->
+<div class="w-full h-56 flex items-end">
+<svg class="w-full h-full" preserveaspectratio="none" viewbox="0 0 720 200">
+<!-- Grid horizontal lines -->
+<line stroke="#f5ebec" stroke-width="1.5" x1="0" x2="720" y1="40" y2="40"></line>
+<line stroke="#f5ebec" stroke-width="1.5" x1="0" x2="720" y1="90" y2="90"></line>
+<line stroke="#f5ebec" stroke-width="1.5" x1="0" x2="720" y1="140" y2="140"></line>
+<line stroke="#e8d8da" stroke-width="2" x1="0" x2="720" y1="190" y2="190"></line>
+<!-- Jan -->
+<rect fill="#c94657" height="148" opacity="0.85" rx="2" width="16" x="25" y="42"></rect>
+<rect fill="#7a1c28" height="85" rx="2" width="16" x="45" y="105"></rect>
+<!-- Feb -->
+<rect fill="#c94657" height="148" opacity="0.85" rx="2" width="16" x="85" y="42"></rect>
+<rect fill="#7a1c28" height="88" rx="2" width="16" x="105" y="102"></rect>
+<!-- Mar -->
+<rect fill="#c94657" height="148" opacity="0.85" rx="2" width="16" x="145" y="42"></rect>
+<rect fill="#7a1c28" height="92" rx="2" width="16" x="165" y="98"></rect>
+<!-- Apr -->
+<rect fill="#c94657" height="148" opacity="0.85" rx="2" width="16" x="205" y="42"></rect>
+<rect fill="#7a1c28" height="96" rx="2" width="16" x="225" y="94"></rect>
+<!-- Mei -->
+<rect fill="#c94657" height="148" opacity="0.85" rx="2" width="16" x="265" y="42"></rect>
+<rect fill="#7a1c28" height="100" rx="2" width="16" x="285" y="90"></rect>
+<!-- Jun -->
+<rect fill="#c94657" height="148" opacity="0.85" rx="2" width="16" x="325" y="42"></rect>
+<rect fill="#7a1c28" height="102" rx="2" width="16" x="345" y="88"></rect>
+<!-- Jul -->
+<rect fill="#c94657" height="148" opacity="0.85" rx="2" width="16" x="385" y="42"></rect>
+<rect fill="#7a1c28" height="98" rx="2" width="16" x="405" y="92"></rect>
+<!-- Agu -->
+<rect fill="#c94657" height="148" opacity="0.85" rx="2" width="16" x="445" y="42"></rect>
+<rect fill="#7a1c28" height="95" rx="2" width="16" x="465" y="95"></rect>
+<!-- Sep -->
+<rect fill="#c94657" height="148" opacity="0.85" rx="2" width="16" x="505" y="42"></rect>
+<rect fill="#7a1c28" height="90" rx="2" width="16" x="525" y="100"></rect>
+<!-- Okt -->
+<rect fill="#c94657" height="148" opacity="0.85" rx="2" width="16" x="565" y="42"></rect>
+<rect fill="#7a1c28" height="86" rx="2" width="16" x="585" y="104"></rect>
+<!-- Nov -->
+<rect fill="#c94657" height="148" opacity="0.85" rx="2" width="16" x="625" y="42"></rect>
+<rect fill="#7a1c28" height="82" rx="2" width="16" x="645" y="108"></rect>
+<!-- Des -->
+<rect fill="#c94657" height="148" opacity="0.85" rx="2" width="16" x="685" y="42"></rect>
+<rect fill="#7a1c28" height="80" rx="2" width="16" x="705" y="110"></rect>
+</svg>
+</div>
+<div class="grid grid-cols-12 text-center font-caption text-caption text-on-surface-variant">
+<span>Jan</span><span>Feb</span><span>Mar</span><span>Apr</span><span>Mei</span><span>Jun</span>
+<span>Jul</span><span>Agu</span><span>Sep</span><span>Okt</span><span>Nov</span><span>Des</span>
+</div>
+<div class="flex items-center justify-between pt-space-xs border-t border-surface-container">
+<div class="flex items-center gap-space-md">
+<span class="flex items-center gap-space-xs font-caption text-caption text-on-surface-variant">
+<span class="w-3 h-3 rounded bg-secondary-container"></span> Sebelum Meterisasi (Rp 1,57 M/bln)
+            </span>
+<span class="flex items-center gap-space-xs font-caption text-caption text-on-surface-variant">
+<span class="w-3 h-3 rounded bg-primary"></span> Setelah Terukur (Rp 0,91 M/bln)
+            </span>
+</div>
+<span class="font-telemetry-unit text-telemetry-unit text-secondary font-bold">Rata-rata Penurunan: -41,6%</span>
+</div>
+</div>
+</div>
+<!-- Chart C: Distribusi Jenis Lampu & Efisiensi Daya -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm border border-outline-variant/40 flex flex-col justify-between">
+<div class="flex flex-col gap-space-2xs mb-space-sm">
+<h3 class="font-headline-sm text-headline-sm text-on-surface tracking-tight">
+          Distribusi Jenis Lampu &amp; Daya
+        </h3>
+<span class="font-caption text-caption text-on-surface-variant">Total 8.940 titik lampu terpasang</span>
+</div>
+<!-- Donut Chart SVG -->
+<div class="flex items-center justify-center my-space-xs relative">
+<svg class="w-44 h-44 -rotate-90" viewbox="0 0 100 100">
+<circle cx="50" cy="50" fill="none" r="38" stroke="#f5ebec" stroke-width="14"></circle>
+<!-- Smart LED 60W-90W (68.5%) -->
+<circle cx="50" cy="50" fill="none" r="38" stroke="#7a1c28" stroke-dasharray="163.6 238.7" stroke-dashoffset="0" stroke-width="14"></circle>
+<!-- Conventional LED 120W (21.8%) -->
+<circle cx="50" cy="50" fill="none" r="38" stroke="#c94657" stroke-dasharray="52.1 238.7" stroke-dashoffset="-163.6" stroke-width="14"></circle>
+<!-- Son-T 250W lama (9.7%) -->
+<circle cx="50" cy="50" fill="none" r="38" stroke="#e9a79f" stroke-dasharray="23.1 238.7" stroke-dashoffset="-215.7" stroke-width="14"></circle>
+</svg>
+<div class="absolute inset-0 flex flex-col items-center justify-center pointer-events-none">
+<span class="font-telemetry-data text-headline-lg font-bold text-on-surface">68,5%</span>
+<span class="font-caption text-caption text-on-surface-variant uppercase">Smart LED</span>
+</div>
+</div>
+<!-- Legend Breakdown -->
+<div class="flex flex-col gap-space-xs pt-space-xs">
+<div class="flex items-center justify-between font-caption text-caption">
+<span class="flex items-center gap-space-xs text-on-surface">
+<span class="w-2.5 h-2.5 rounded-full bg-primary"></span>
+            Smart LED (60W – 90W)
+          </span>
+<span class="font-telemetry-unit text-telemetry-unit font-bold text-on-surface">6.120 Titik (68,5%)</span>
+</div>
+<div class="flex items-center justify-between font-caption text-caption">
+<span class="flex items-center gap-space-xs text-on-surface">
+<span class="w-2.5 h-2.5 rounded-full bg-secondary-container"></span>
+            LED Konvensional (120W)
+          </span>
+<span class="font-telemetry-unit text-telemetry-unit font-bold text-on-surface">1.950 Titik (21,8%)</span>
+</div>
+<div class="flex items-center justify-between font-caption text-caption">
+<span class="flex items-center gap-space-xs text-on-surface">
+<span class="w-2.5 h-2.5 rounded-full bg-tertiary-fixed-dim"></span>
+            Son-T / Merkuri (250W)
+          </span>
+<span class="font-telemetry-unit text-telemetry-unit font-bold text-on-surface">870 Titik (9,7%)</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Progress per Kecamatan (Chart B) & Visual Dispatch Card -->
+<section class="grid grid-cols-1 lg:grid-cols-3 gap-space-md">
+<!-- Chart B: Status Meterisasi IDPEL per Kecamatan -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm border border-outline-variant/40 lg:col-span-2 flex flex-col justify-between">
+<div class="flex items-center justify-between mb-space-md">
+<div class="flex flex-col">
+<h3 class="font-headline-sm text-headline-sm text-on-surface tracking-tight">
+            Status Meterisasi IDPEL per Kecamatan di Kota Tanjungpinang
+          </h3>
+<span class="font-caption text-caption text-on-surface-variant">
+            Kemajuan pemasangan kWh meter terukur dari total 1.482 sambungan IDPEL
+          </span>
+</div>
+<span class="font-caption text-caption text-on-surface-variant font-semibold uppercase">Target Tuntas TA 2025</span>
+</div>
+<div class="flex flex-col gap-space-md">
+<!-- Bukit Bestari -->
+<div class="flex flex-col gap-space-2xs">
+<div class="flex items-center justify-between font-label-md text-label-md">
+<span class="font-semibold text-on-surface">Kecamatan Bukit Bestari</span>
+<span class="font-telemetry-unit text-telemetry-unit font-bold text-secondary">
+              412 Meterisasi / 68 Belum <span class="text-on-surface-variant font-normal">(85,8%)</span>
+</span>
+</div>
+<div class="w-full h-3 bg-surface-container rounded-full overflow-hidden flex">
+<div class="h-full bg-secondary" style="width: 85.8%;"></div>
+<div class="h-full bg-tertiary-fixed-dim" style="width: 14.2%;"></div>
+</div>
+</div>
+<!-- Tanjungpinang Timur -->
+<div class="flex flex-col gap-space-2xs">
+<div class="flex items-center justify-between font-label-md text-label-md">
+<span class="font-semibold text-on-surface">Kecamatan Tanjungpinang Timur</span>
+<span class="font-telemetry-unit text-telemetry-unit font-bold text-secondary">
+              440 Meterisasi / 120 Belum <span class="text-on-surface-variant font-normal">(78,6%)</span>
+</span>
+</div>
+<div class="w-full h-3 bg-surface-container rounded-full overflow-hidden flex">
+<div class="h-full bg-secondary" style="width: 78.6%;"></div>
+<div class="h-full bg-tertiary-fixed-dim" style="width: 21.4%;"></div>
+</div>
+</div>
+<!-- Tanjungpinang Kota -->
+<div class="flex flex-col gap-space-2xs">
+<div class="flex items-center justify-between font-label-md text-label-md">
+<span class="font-semibold text-on-surface">Kecamatan Tanjungpinang Kota</span>
+<span class="font-telemetry-unit text-telemetry-unit font-bold text-secondary">
+              164 Meterisasi / 58 Belum <span class="text-on-surface-variant font-normal">(73,9%)</span>
+</span>
+</div>
+<div class="w-full h-3 bg-surface-container rounded-full overflow-hidden flex">
+<div class="h-full bg-secondary" style="width: 73.9%;"></div>
+<div class="h-full bg-tertiary-fixed-dim" style="width: 26.1%;"></div>
+</div>
+</div>
+<!-- Tanjungpinang Barat -->
+<div class="flex flex-col gap-space-2xs">
+<div class="flex items-center justify-between font-label-md text-label-md">
+<span class="font-semibold text-on-surface">Kecamatan Tanjungpinang Barat</span>
+<span class="font-telemetry-unit text-telemetry-unit font-bold text-secondary">
+              140 Meterisasi / 80 Belum <span class="text-on-surface-variant font-normal">(63,6%)</span>
+</span>
+</div>
+<div class="w-full h-3 bg-surface-container rounded-full overflow-hidden flex">
+<div class="h-full bg-secondary" style="width: 63.6%;"></div>
+<div class="h-full bg-tertiary-fixed-dim" style="width: 36.4%;"></div>
+</div>
+</div>
+</div>
+<div class="mt-space-md pt-space-sm border-t border-surface-container flex items-center justify-between">
+<span class="font-caption text-caption text-on-surface-variant">Prioritas Pemasangan: Kawasan Ring Road &amp; Pesisir Barat</span>
+<span class="font-caption text-caption font-semibold text-secondary">Total Terukur: 1.156 IDPEL (78,0%)</span>
+</div>
+</div>
+<!-- Mini Visual Card: Field Dispatch & PJU Maintenance Vehicle -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm border border-outline-variant/40 flex flex-col justify-between relative overflow-hidden">
+<div class="flex items-center justify-between mb-space-sm">
+<span class="font-caption text-caption text-on-surface-variant uppercase font-semibold">Tim Reaksi Cepat Dishub</span>
+<span class="inline-flex items-center px-space-xs py-space-2xs rounded bg-surface-container-high text-on-surface font-caption text-caption font-bold">
+          3 Regu Siaga
+        </span>
+</div>
+<div class="w-full h-32 rounded-lg overflow-hidden relative mb-space-sm">
+<img class="w-full h-full object-cover" data-alt="Teknisi Dinas Perhubungan Kota Tanjungpinang sedang melakukan perawatan rutin tiang lampu penerangan jalan umum smart LED di waktu senja di tepi laut Pulau Bintan, suasana profesional dan presisi dengan latar belakang jembatan Dompak." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBhFKz8fIC3wpgmR1UDJQsFVoae-8YO_2B6SaHvHE7Dmes9DxUbsMXIDd0ykOuAtv8mX4cbssuRTwB743ASNo46ZWRMc4Jb86AD_cnk41_nfLiQhCSx0S4NEQlQsP7vc591YI-jEQ58aZmAAUQe-pwrKeMPfHrwL36G2kmnaDAgijeCj-a9TjrIVqn4iCjSxUdP1alWcbSeSFww9n15eEAzgzxHHfzgQXijicKteptk2Gan2Ozf_Ayp"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent"></div>
+<div class="absolute bottom-2 left-2 right-2 text-on-primary flex items-center justify-between">
+<span class="font-label-md text-label-md font-bold">Patroli Malam &amp; Perbaikan</span>
+<span class="font-caption text-caption text-secondary-fixed">Uptime 98,2%</span>
+</div>
+</div>
+<div class="flex flex-col gap-space-xs">
+<span class="font-caption text-caption text-on-surface-variant">Laporan Warga Masuk: <strong class="text-on-surface font-semibold">2 Tiket</strong> dalam 24 jam terakhir. Waktu respons rata-rata: <strong class="text-secondary font-semibold">45 Menit</strong>.</span>
+<button class="w-full bg-surface-container hover:bg-surface-container-high text-on-surface py-space-xs rounded-lg font-label-md text-label-md font-semibold transition-all text-center mt-space-2xs border border-outline-variant/30" type="button">
+          Buka Jadwal Tiket Lapangan
+        </button>
+</div>
+</div>
+</section>
+<!-- 6. TABEL MONITORING CEPAT (Live PJU Feed & Incident Alerts) -->
+<section class="bg-surface-container-lowest p-space-xl rounded-xl shadow-sm border border-outline-variant/40 flex flex-col gap-space-md">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm">
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-secondary text-[22px]">tune</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface tracking-tight">
+            Log Telemetri &amp; Monitoring Terkini IDPEL PJU
+          </h3>
+</div>
+<span class="font-caption text-caption text-on-surface-variant">
+          Pembaruan waktu nyata dari panel SCADA dan sinkronisasi server PLN
+        </span>
+</div>
+<div class="flex items-center gap-space-xs">
+<button class="inline-flex items-center gap-space-2xs bg-surface-container hover:bg-surface-container-high text-on-surface px-space-sm py-space-xs rounded-lg font-label-md text-label-md transition-all border border-outline-variant/40" type="button">
+<span class="material-symbols-outlined text-[16px]">filter_list</span>
+<span>Saring Data</span>
+</button>
+<button class="inline-flex items-center gap-space-2xs bg-surface-container hover:bg-surface-container-high text-on-surface px-space-sm py-space-xs rounded-lg font-label-md text-label-md transition-all border border-outline-variant/40" type="button">
+<span class="material-symbols-outlined text-[16px]">refresh</span>
+<span>Segarkan</span>
+</button>
+</div>
+</div>
+<!-- Table Container -->
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-low text-on-surface-variant font-caption text-caption uppercase tracking-wider border-b border-surface-container">
+<th class="p-space-sm">IDPEL PLN</th>
+<th class="p-space-sm">Lokasi / Ruas Jalan</th>
+<th class="p-space-sm">Kecamatan</th>
+<th class="p-space-sm">Status Meterisasi</th>
+<th class="p-space-sm">Daya / kWh Terukur</th>
+<th class="p-space-sm">Status Lampu</th>
+<th class="p-space-sm text-right">Aksi</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-surface-container font-body-sm text-body-sm text-on-surface">
+<!-- Row 1: Jl. Hang Tuah -->
+<tr class="hover:bg-surface-container-low/60 transition-colors">
+<td class="p-space-sm font-telemetry-unit text-telemetry-unit font-bold text-secondary">
+              543100223841
+            </td>
+<td class="p-space-sm">
+<div class="flex flex-col">
+<span class="font-semibold text-on-surface">Jl. Hang Tuah (Tepi Laut)</span>
+<span class="font-caption text-caption text-on-surface-variant">Gardu Distribusi GD-TL01 • 42 Tiang</span>
+</div>
+</td>
+<td class="p-space-sm text-on-surface-variant">Tanjungpinang Kota</td>
+<td class="p-space-sm">
+<span class="inline-flex items-center gap-space-2xs px-space-xs py-space-2xs rounded bg-secondary-fixed text-on-secondary-fixed font-caption text-caption font-bold">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span> Meter Digital
+              </span>
+</td>
+<td class="p-space-sm">
+<div class="flex flex-col">
+<span class="font-telemetry-data text-label-md text-on-surface font-bold">5.8 kW</span>
+<span class="font-caption text-caption text-on-surface-variant">72,4 kWh / hari</span>
+</div>
+</td>
+<td class="p-space-sm">
+<span class="inline-flex items-center gap-space-2xs px-space-xs py-space-2xs rounded bg-surface-container-high text-on-primary-fixed-variant font-caption text-caption font-semibold">
+<span class="w-2 h-2 rounded-full bg-secondary"></span> 100% Nyala (Normal)
+              </span>
+</td>
+<td class="p-space-sm text-right">
+<button class="p-space-xs rounded hover:bg-surface-container text-on-surface-variant hover:text-on-surface transition-colors" title="Lihat Detail Telemetri" type="button">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+</button>
+</td>
+</tr>
+<!-- Row 2: Jl. D.I. Panjaitan KM 9 -->
+<tr class="hover:bg-surface-container-low/60 transition-colors">
+<td class="p-space-sm font-telemetry-unit text-telemetry-unit font-bold text-secondary">
+              543100551920
+            </td>
+<td class="p-space-sm">
+<div class="flex flex-col">
+<span class="font-semibold text-on-surface">Jl. D.I. Panjaitan KM 9</span>
+<span class="font-caption text-caption text-on-surface-variant">Gardu Arteri Timur • 56 Tiang LED 90W</span>
+</div>
+</td>
+<td class="p-space-sm text-on-surface-variant">Tanjungpinang Timur</td>
+<td class="p-space-sm">
+<span class="inline-flex items-center gap-space-2xs px-space-xs py-space-2xs rounded bg-secondary-fixed text-on-secondary-fixed font-caption text-caption font-bold">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span> Meter Digital
+              </span>
+</td>
+<td class="p-space-sm">
+<div class="flex flex-col">
+<span class="font-telemetry-data text-label-md text-on-surface font-bold">8.2 kW</span>
+<span class="font-caption text-caption text-on-surface-variant">98,6 kWh / hari</span>
+</div>
+</td>
+<td class="p-space-sm">
+<span class="inline-flex items-center gap-space-2xs px-space-xs py-space-2xs rounded bg-surface-container-high text-on-primary-fixed-variant font-caption text-caption font-semibold">
+<span class="w-2 h-2 rounded-full bg-secondary"></span> 100% Nyala (Normal)
+              </span>
+</td>
+<td class="p-space-sm text-right">
+<button class="p-space-xs rounded hover:bg-surface-container text-on-surface-variant hover:text-on-surface transition-colors" title="Lihat Detail Telemetri" type="button">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+</button>
+</td>
+</tr>
+<!-- Row 3: Jembatan I Dompak -->
+<tr class="hover:bg-surface-container-low/60 transition-colors">
+<td class="p-space-sm font-telemetry-unit text-telemetry-unit font-bold text-secondary">
+              543100889211
+            </td>
+<td class="p-space-sm">
+<div class="flex flex-col">
+<span class="font-semibold text-on-surface">Jembatan I Sultan Mahmud Riayat Syah (Dompak)</span>
+<span class="font-caption text-caption text-on-surface-variant">Panel Utama Jembatan • 68 Tiang &amp; Ornamen</span>
+</div>
+</td>
+<td class="p-space-sm text-on-surface-variant">Bukit Bestari</td>
+<td class="p-space-sm">
+<span class="inline-flex items-center gap-space-2xs px-space-xs py-space-2xs rounded bg-secondary-fixed text-on-secondary-fixed font-caption text-caption font-bold">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span> Meter Digital
+              </span>
+</td>
+<td class="p-space-sm">
+<div class="flex flex-col">
+<span class="font-telemetry-data text-label-md text-on-surface font-bold">11.4 kW</span>
+<span class="font-caption text-caption text-on-surface-variant">136,8 kWh / hari</span>
+</div>
+</td>
+<td class="p-space-sm">
+<span class="inline-flex items-center gap-space-2xs px-space-xs py-space-2xs rounded bg-surface-container-high text-on-primary-fixed-variant font-caption text-caption font-semibold">
+<span class="w-2 h-2 rounded-full bg-secondary"></span> 100% Nyala (Normal)
+              </span>
+</td>
+<td class="p-space-sm text-right">
+<button class="p-space-xs rounded hover:bg-surface-container text-on-surface-variant hover:text-on-surface transition-colors" title="Lihat Detail Telemetri" type="button">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+</button>
+</td>
+</tr>
+<!-- Row 4: Jl. Ahmad Yani (Incident Alert Row) -->
+<tr class="hover:bg-surface-container-low/60 transition-colors bg-secondary-fixed/20">
+<td class="p-space-sm font-telemetry-unit text-telemetry-unit font-bold text-primary">
+              543100348719
+            </td>
+<td class="p-space-sm">
+<div class="flex flex-col">
+<span class="font-semibold text-on-surface">Jl. Ahmad Yani (Depan Pamedan)</span>
+<span class="font-caption text-caption text-primary font-medium">MCB Trip • 4 Tiang Padam Terdeteksi</span>
+</div>
+</td>
+<td class="p-space-sm text-on-surface-variant">Bukit Bestari</td>
+<td class="p-space-sm">
+<span class="inline-flex items-center gap-space-2xs px-space-xs py-space-2xs rounded bg-secondary-fixed text-on-secondary-fixed font-caption text-caption font-bold">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span> Meter Digital
+              </span>
+</td>
+<td class="p-space-sm">
+<div class="flex flex-col">
+<span class="font-telemetry-data text-label-md text-primary font-bold">1.2 kW (Anomali)</span>
+<span class="font-caption text-caption text-primary">Tegangan Drop: 182V</span>
+</div>
+</td>
+<td class="p-space-sm">
+<span class="inline-flex items-center gap-space-2xs px-space-xs py-space-2xs rounded bg-surface-container-highest text-on-primary-fixed-variant font-caption text-caption font-bold animate-pulse">
+<span class="w-2 h-2 rounded-full bg-primary"></span> Gangguan (4 Padam)
+              </span>
+</td>
+<td class="p-space-sm text-right">
+<button class="inline-flex items-center gap-space-2xs px-space-xs py-space-2xs rounded bg-primary text-on-primary font-caption text-caption font-semibold" type="button">
+<span>Disposisi</span>
+</button>
+</td>
+</tr>
+<!-- Row 5: Jl. Merdeka (Abonemen Non-Meter) -->
+<tr class="hover:bg-surface-container-low/60 transition-colors">
+<td class="p-space-sm font-telemetry-unit text-telemetry-unit font-bold text-on-surface-variant">
+              543100109432
+            </td>
+<td class="p-space-sm">
+<div class="flex flex-col">
+<span class="font-semibold text-on-surface">Jl. Merdeka (Kota Lama)</span>
+<span class="font-caption text-caption text-on-surface-variant">Sambungan Kontrak Flat Daya • 28 Tiang Heritage</span>
+</div>
+</td>
+<td class="p-space-sm text-on-surface-variant">Tanjungpinang Kota</td>
+<td class="p-space-sm">
+<span class="inline-flex items-center gap-space-2xs px-space-xs py-space-2xs rounded bg-tertiary-fixed text-on-tertiary-fixed font-caption text-caption font-bold">
+<span class="w-1.5 h-1.5 rounded-full bg-on-tertiary-fixed"></span> Non-Meter (Flat)
+              </span>
+</td>
+<td class="p-space-sm">
+<div class="flex flex-col">
+<span class="font-telemetry-data text-label-md text-on-surface-variant font-bold">Beban Flat Kontrak</span>
+<span class="font-caption text-caption text-on-surface-variant">Estimasi 6.600 VA</span>
+</div>
+</td>
+<td class="p-space-sm">
+<span class="inline-flex items-center gap-space-2xs px-space-xs py-space-2xs rounded bg-surface-container-high text-on-primary-fixed-variant font-caption text-caption font-semibold">
+<span class="w-2 h-2 rounded-full bg-secondary"></span> 100% Nyala (Normal)
+              </span>
+</td>
+<td class="p-space-sm text-right">
+<button class="p-space-xs rounded hover:bg-surface-container text-on-surface-variant hover:text-on-surface transition-colors" title="Lihat Detail Telemetri" type="button">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Table Footer & Summary -->
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm pt-space-xs border-t border-surface-container">
+<span class="font-caption text-caption text-on-surface-variant">
+        Menampilkan 5 dari 1.482 IDPEL Terdaftar • Sinkronisasi otomatis setiap 60 detik
+      </span>
+<div class="flex items-center gap-space-xs">
+<button class="px-space-sm py-space-2xs rounded bg-surface-container hover:bg-surface-container-high text-on-surface font-caption text-caption font-medium transition-all" type="button">Sebelumnya</button>
+<button class="px-space-sm py-space-2xs rounded bg-primary text-on-primary font-caption text-caption font-medium transition-all" type="button">1</button>
+<button class="px-space-sm py-space-2xs rounded bg-surface-container hover:bg-surface-container-high text-on-surface font-caption text-caption font-medium transition-all" type="button">2</button>
+<button class="px-space-sm py-space-2xs rounded bg-surface-container hover:bg-surface-container-high text-on-surface font-caption text-caption font-medium transition-all" type="button">3</button>
+<button class="px-space-sm py-space-2xs rounded bg-surface-container hover:bg-surface-container-high text-on-surface font-caption text-caption font-medium transition-all" type="button">Selanjutnya</button>
+</div>
+</div>
+</section>
+</div></main></div></body></html>
