@@ -14,55 +14,7 @@ class SpreadsheetDashboardController extends Controller
      */
     public function index(Request $request)
     {
-        $apiUrl = 'https://script.google.com/macros/s/AKfycbxSNjBgT6BaDGQ9k5bEbal3DDpt5i8t5RfG0vyT-GhnHeaT1bb-hYUQ1I879doUGCPAAA/exec';
-
-        // Cache the spreadsheet data for 15 minutes to prevent slow page loads
-        $data = Cache::remember('spreadsheet_data', 15 * 60, function () use ($apiUrl) {
-            $response = Http::get($apiUrl);
-            
-            if ($response->successful()) {
-                return $response->json();
-            }
-            
-            return null;
-        });
-
-        $items = $data['data'] ?? [];
-        $totalItems = count($items);
-        
-        // Calculate KPIs
-        $totalDaya = 0;
-        $ledCount = 0;
-        $ballasCount = 0;
-        $meterCount = 0;
-        $abonemenCount = 0;
-
-        // Collect unique IDPELs
-        $idpels = [];
-
-        foreach ($items as $item) {
-            $daya = is_numeric($item['BESAR DAYA']) ? (int) $item['BESAR DAYA'] : 0;
-            $totalDaya += $daya;
-
-            if (strtoupper($item['JENIS LAMPU']) === 'LED') {
-                $ledCount++;
-            } elseif (strtoupper($item['JENIS LAMPU']) === 'BALLAS') {
-                $ballasCount++;
-            }
-
-            if (strtoupper($item['METER/TERSEBAR']) === 'METER') {
-                $meterCount++;
-            } else {
-                $abonemenCount++;
-            }
-
-            if (!empty($item['IDPEL'])) {
-                $idpels[$item['IDPEL']] = true;
-            }
-        }
-
-        $totalIdpel = count($idpels);
-        $totalKw = $totalDaya / 1000;
+        $query = \App\Models\SpreadsheetPju::query();
 
         // Search and filter logic
         $search = $request->input('search');
@@ -70,40 +22,47 @@ class SpreadsheetDashboardController extends Controller
         $statusMeter = $request->input('status_meter');
 
         if (!empty($search)) {
-            $items = array_filter($items, function($item) use ($search) {
-                return (
-                    stripos($item['ALAMAT'] ?? '', $search) !== false ||
-                    stripos($item['IDPEL'] ?? '', $search) !== false ||
-                    stripos($item['JENIS LAMPU'] ?? '', $search) !== false ||
-                    stripos($item['NO URUT'] ?? '', $search) !== false
-                );
+            $query->where(function($q) use ($search) {
+                $q->where('alamat', 'like', "%{$search}%")
+                  ->orWhere('idpel', 'like', "%{$search}%")
+                  ->orWhere('jenis_lampu', 'like', "%{$search}%")
+                  ->orWhere('no_urut', 'like', "%{$search}%");
             });
-            $items = array_values($items); // re-index
         }
 
         if (!empty($jenisLampu) && $jenisLampu !== 'all') {
-            $items = array_filter($items, function($item) use ($jenisLampu) {
-                return strtoupper($item['JENIS LAMPU'] ?? '') === strtoupper($jenisLampu);
-            });
-            $items = array_values($items);
+            $query->where('jenis_lampu', $jenisLampu);
         }
 
         if (!empty($statusMeter) && $statusMeter !== 'all') {
-            $items = array_filter($items, function($item) use ($statusMeter) {
-                return strtoupper($item['METER/TERSEBAR'] ?? '') === strtoupper($statusMeter);
-            });
-            $items = array_values($items);
+            $query->where('status_meter', $statusMeter);
         }
 
-        // Manual Pagination
-        $perPage = 15;
-        $currentPage = LengthAwarePaginator::resolveCurrentPage();
-        $currentItems = array_slice($items, ($currentPage - 1) * $perPage, $perPage);
+        $paginatedItems = $query->paginate(15)->withQueryString();
+
+        $paginatedItems->getCollection()->transform(function ($item) {
+            return [
+                'NO URUT' => $item->no_urut,
+                'IDPEL' => $item->idpel,
+                'ALAMAT' => $item->alamat,
+                'JENIS LAMPU' => $item->jenis_lampu,
+                'BESAR DAYA' => $item->besar_daya,
+                'METER/TERSEBAR' => $item->status_meter,
+                'LATITUDE' => $item->lat,
+                'LONGITUDE' => $item->lng,
+            ];
+        });
+
+        $totalItems = \App\Models\SpreadsheetPju::count();
+        $totalIdpel = \App\Models\SpreadsheetPju::whereNotNull('idpel')->where('idpel', '!=', '')->distinct('idpel')->count('idpel');
         
-        $paginatedItems = new LengthAwarePaginator($currentItems, count($items), $perPage, $currentPage, [
-            'path' => LengthAwarePaginator::resolveCurrentPath(),
-            'query' => $request->query(),
-        ]);
+        $totalDaya = \App\Models\SpreadsheetPju::sum('besar_daya');
+        $ledCount = \App\Models\SpreadsheetPju::where('jenis_lampu', 'LED')->count();
+        $ballasCount = \App\Models\SpreadsheetPju::where('jenis_lampu', 'BALLAS')->count();
+        $meterCount = \App\Models\SpreadsheetPju::where('status_meter', 'METER')->count();
+        $abonemenCount = \App\Models\SpreadsheetPju::where('status_meter', '!=', 'METER')->orWhereNull('status_meter')->count();
+
+        $totalKw = $totalDaya / 1000;
 
         return \Inertia\Inertia::render('DashboardSpreadsheet', [
             'pjuData' => $paginatedItems,
@@ -121,11 +80,63 @@ class SpreadsheetDashboardController extends Controller
     }
     
     /**
-     * Clear cache manually
+     * Clear cache manually and sync data
      */
     public function clearCache()
     {
-        Cache::forget('spreadsheet_data');
-        return redirect()->route('dashboard.spreadsheet')->with('message', 'Data spreadsheet telah diperbarui.');
+        set_time_limit(0); // Prevent maximum execution time error
+
+        $apiUrl = 'https://script.google.com/macros/s/AKfycbxSNjBgT6BaDGQ9k5bEbal3DDpt5i8t5RfG0vyT-GhnHeaT1bb-hYUQ1I879doUGCPAAA/exec';
+        
+        $response = Http::get($apiUrl);
+        if ($response->successful()) {
+            $data = $response->json();
+            $items = $data['data'] ?? [];
+            
+            $upsertData = [];
+            $now = now();
+
+            foreach ($items as $item) {
+                if (empty($item['NO URUT'])) {
+                    continue;
+                }
+                
+                $lat = null;
+                $lng = null;
+                if (!empty($item['KOORDINAT'])) {
+                    $parts = explode(',', $item['KOORDINAT']);
+                    if (count($parts) >= 2) {
+                        $lat = trim($parts[0]);
+                        $lng = trim($parts[1]);
+                    }
+                }
+
+                $upsertData[] = [
+                    'no_urut' => $item['NO URUT'],
+                    'idpel' => $item['IDPEL'] ?? null,
+                    'alamat' => $item['ALAMAT'] ?? null,
+                    'jenis_lampu' => strtoupper($item['JENIS LAMPU'] ?? ''),
+                    'besar_daya' => is_numeric($item['BESAR DAYA'] ?? null) ? (int) $item['BESAR DAYA'] : 0,
+                    'status_meter' => strtoupper($item['METER/TERSEBAR'] ?? ''),
+                    'lat' => $lat,
+                    'lng' => $lng,
+                    'created_at' => $now,
+                    'updated_at' => $now,
+                ];
+            }
+
+            if (!empty($upsertData)) {
+                // Bulk upsert chunks to avoid query length limits
+                foreach (array_chunk($upsertData, 500) as $chunk) {
+                    \App\Models\SpreadsheetPju::upsert(
+                        $chunk,
+                        ['no_urut'],
+                        ['idpel', 'alamat', 'jenis_lampu', 'besar_daya', 'status_meter', 'lat', 'lng', 'updated_at']
+                    );
+                }
+            }
+        }
+
+        return redirect()->route('dashboard.spreadsheet')->with('message', 'Data spreadsheet telah disinkronisasi ke database.');
     }
 }
