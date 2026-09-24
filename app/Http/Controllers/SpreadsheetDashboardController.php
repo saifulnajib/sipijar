@@ -235,7 +235,7 @@ class SpreadsheetDashboardController extends Controller
             }
         }
 
-        return redirect()->route('dashboard.spreadsheet')->with('message', 'Data spreadsheet telah disinkronisasi ke database.');
+        return redirect()->route('dashboard')->with('message', 'Data spreadsheet telah disinkronisasi ke database.');
     }
 
     public function show($id)
