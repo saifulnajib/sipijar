@@ -1,6 +1,8 @@
 <script setup>
 import { ref } from 'vue';
 import { Link, usePage } from '@inertiajs/vue3';
+import Dropdown from '@/Components/Dropdown.vue';
+import DropdownLink from '@/Components/DropdownLink.vue';
 
 const page = usePage();
 const activeTab = ref('dashboard-monitoring');
@@ -52,17 +54,6 @@ const activeTab = ref('dashboard-monitoring');
             <span class="material-symbols-outlined text-[20px] transition-transform" :class="route().current('dashboard') ? 'group-hover:scale-110' : 'text-gray-400 group-hover:text-primary dark:group-hover:text-rose-300'">dashboard</span>
             <span>Beranda</span>
             <span v-if="route().current('dashboard')" class="ml-auto w-2 h-2 rounded-full bg-white/80 animate-ping"></span>
-          </Link>
-
-          <Link
-            :href="route('dashboard.spreadsheet')"
-            class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl transition-all duration-200 font-label-md text-sm font-semibold group relative overflow-hidden"
-            :class="route().current('dashboard.spreadsheet') ? 'bg-gradient-to-r from-primary via-secondary to-primary-container text-white shadow-md shadow-primary/20' : 'text-gray-600 dark:text-gray-400 hover:bg-rose-50/60 dark:hover:bg-rose-950/30 hover:text-primary dark:hover:text-rose-300 font-medium'"
-          >
-            <div v-if="route().current('dashboard.spreadsheet')" class="absolute left-0 top-0 bottom-0 w-1 bg-white/40 rounded-r"></div>
-            <span class="material-symbols-outlined text-[20px] transition-transform" :class="route().current('dashboard.spreadsheet') ? 'group-hover:scale-110' : 'text-gray-400 group-hover:text-primary dark:group-hover:text-rose-300'">table_chart</span>
-            <span>Data Spreadsheet</span>
-            <span v-if="route().current('dashboard.spreadsheet')" class="ml-auto w-2 h-2 rounded-full bg-white/80 animate-ping"></span>
           </Link>
 
           <Link
@@ -152,18 +143,6 @@ const activeTab = ref('dashboard-monitoring');
 
         <!-- Right Quick Controls & Profile -->
         <div class="flex items-center gap-3">
-          <!-- District Quick Selector -->
-          <div class="inline-flex items-center gap-2 bg-white dark:bg-gray-800 px-3 py-1.5 rounded-xl shadow-xs border border-rose-100/60 dark:border-rose-900/40">
-            <span class="material-symbols-outlined text-[18px] text-secondary">location_on</span>
-            <select class="bg-transparent font-label-md text-xs font-semibold text-gray-800 dark:text-gray-200 focus:outline-none cursor-pointer border-none py-0 pl-0 pr-6 focus:ring-0">
-              <option value="all">Semua Kecamatan</option>
-              <option value="tpi-barat">Kec. Tanjungpinang Barat</option>
-              <option value="tpi-timur">Kec. Tanjungpinang Timur</option>
-              <option value="tpi-kota">Kec. Tanjungpinang Kota</option>
-              <option value="bukit-bestari">Kec. Bukit Bestari</option>
-            </select>
-          </div>
-
           <!-- Notification Bell -->
           <div class="relative flex items-center justify-center">
             <button
@@ -178,15 +157,35 @@ const activeTab = ref('dashboard-monitoring');
 
           <div class="h-6 w-px bg-rose-200/50 dark:bg-rose-900/40"></div>
 
-          <!-- User Quick Badge -->
+          <!-- User Profile Dropdown -->
           <div class="flex items-center gap-2.5 pl-1">
-            <div class="w-8 h-8 rounded-xl bg-gradient-to-br from-primary to-secondary flex items-center justify-center text-white shadow-xs font-bold text-xs">
-              {{ $page.props.auth.user.name.charAt(0) }}
-            </div>
-            <div class="hidden xl:flex flex-col text-left">
-              <span class="font-label-md text-xs font-bold text-gray-900 dark:text-white leading-none">{{ $page.props.auth.user.name }}</span>
-              <span class="font-caption text-[10px] text-gray-400 dark:text-gray-400 mt-0.5 leading-none">Super Operator</span>
-            </div>
+            <Dropdown align="right" width="48">
+              <template #trigger>
+                <button type="button" class="flex items-center gap-2 hover:bg-rose-50 dark:hover:bg-gray-800 p-1.5 rounded-xl transition-colors border border-transparent focus:outline-none">
+                  <div class="w-8 h-8 rounded-xl bg-gradient-to-br from-primary to-secondary flex items-center justify-center text-white shadow-xs font-bold text-xs">
+                    {{ $page.props.auth.user.name.charAt(0) }}
+                  </div>
+                  <div class="hidden xl:flex flex-col text-left">
+                    <span class="font-label-md text-xs font-bold text-gray-900 dark:text-white leading-none">{{ $page.props.auth.user.name }}</span>
+                    <span class="font-caption text-[10px] text-gray-400 dark:text-gray-400 mt-0.5 leading-none">Super Operator</span>
+                  </div>
+                  <span class="material-symbols-outlined text-[18px] text-gray-400">expand_more</span>
+                </button>
+              </template>
+
+              <template #content>
+                <DropdownLink :href="route('profile.edit')">
+                  <div class="flex items-center gap-2 font-label-md text-xs">
+                    <span class="material-symbols-outlined text-[18px]">person</span> Profil Akun
+                  </div>
+                </DropdownLink>
+                <DropdownLink :href="route('logout')" method="post" as="button" class="w-full text-left">
+                  <div class="flex items-center gap-2 font-label-md text-xs text-rose-600 dark:text-rose-400">
+                    <span class="material-symbols-outlined text-[18px]">logout</span> Keluar Sistem
+                  </div>
+                </DropdownLink>
+              </template>
+            </Dropdown>
           </div>
         </div>
       </header>

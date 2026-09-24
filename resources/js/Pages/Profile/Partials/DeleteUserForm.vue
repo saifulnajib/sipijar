@@ -1,10 +1,6 @@
 <script setup>
-import DangerButton from '@/Components/DangerButton.vue';
 import InputError from '@/Components/InputError.vue';
-import InputLabel from '@/Components/InputLabel.vue';
 import Modal from '@/Components/Modal.vue';
-import SecondaryButton from '@/Components/SecondaryButton.vue';
-import TextInput from '@/Components/TextInput.vue';
 import { useForm } from '@inertiajs/vue3';
 import { nextTick, ref } from 'vue';
 
@@ -17,7 +13,6 @@ const form = useForm({
 
 const confirmUserDeletion = () => {
     confirmingUserDeletion.value = true;
-
     nextTick(() => passwordInput.value.focus());
 };
 
@@ -32,75 +27,99 @@ const deleteUser = () => {
 
 const closeModal = () => {
     confirmingUserDeletion.value = false;
-
     form.clearErrors();
     form.reset();
 };
 </script>
 
 <template>
-    <section class="space-y-6">
-        <header>
-            <h2 class="text-lg font-medium text-gray-900 dark:text-gray-100">
-                Delete Account
-            </h2>
-
-            <p class="mt-1 text-sm text-gray-600 dark:text-gray-400">
-                Once your account is deleted, all of its resources and data will
-                be permanently deleted. Before deleting your account, please
-                download any data or information that you wish to retain.
-            </p>
+    <section class="space-y-4">
+        <header class="flex items-center gap-3.5 pb-4 border-b border-rose-200/80 dark:border-rose-900/40">
+            <div class="w-10 h-10 rounded-2xl bg-rose-100 dark:bg-rose-900/60 text-rose-700 dark:text-rose-300 flex items-center justify-center shadow-xs border border-rose-300/60 dark:border-rose-800/40">
+                <span class="material-symbols-outlined text-[22px]">warning</span>
+            </div>
+            <div>
+                <h2 class="text-base font-bold text-rose-950 dark:text-rose-200">
+                    Zona Bahaya (Hapus Akun)
+                </h2>
+                <p class="text-xs text-rose-800/80 dark:text-rose-300/70">
+                    Tindakan ini permanen dan akan menghapus seluruh data kredensial akun operator Anda.
+                </p>
+            </div>
         </header>
 
-        <DangerButton @click="confirmUserDeletion">Delete Account</DangerButton>
+        <p class="text-xs text-gray-600 dark:text-gray-400 leading-relaxed">
+            Setelah akun Anda dihapus, semua data dan hak akses Anda ke SI-PIJAR Dishub Tanjungpinang akan dihapus secara permanen. Pastikan Anda telah melakukan koordinasi dengan Administrator Dishub sebelum menghapus akun ini.
+        </p>
+
+        <div class="pt-1">
+            <button
+                type="button"
+                @click="confirmUserDeletion"
+                class="py-2.5 px-4 rounded-xl bg-rose-600 hover:bg-rose-700 active:scale-[0.99] text-white font-bold text-xs shadow-sm transition-all inline-flex items-center gap-2"
+            >
+                <span class="material-symbols-outlined text-[17px]">delete_forever</span>
+                <span>Hapus Akun Saya</span>
+            </button>
+        </div>
 
         <Modal :show="confirmingUserDeletion" @close="closeModal">
-            <div class="p-6">
-                <h2
-                    class="text-lg font-medium text-gray-900 dark:text-gray-100"
-                >
-                    Are you sure you want to delete your account?
-                </h2>
+            <div class="p-6 sm:p-7 bg-white dark:bg-gray-900 rounded-3xl">
+                <div class="flex items-center gap-3 mb-4">
+                    <div class="w-10 h-10 rounded-2xl bg-rose-100 dark:bg-rose-950 text-rose-600 dark:text-rose-400 flex items-center justify-center">
+                        <span class="material-symbols-outlined text-[22px]">error</span>
+                    </div>
+                    <div>
+                        <h3 class="text-base font-bold text-gray-900 dark:text-white">
+                            Konfirmasi Penghapusan Akun
+                        </h3>
+                        <p class="text-xs text-gray-500 dark:text-gray-400">
+                            Tindakan ini tidak dapat dibatalkan
+                        </p>
+                    </div>
+                </div>
 
-                <p class="mt-1 text-sm text-gray-600 dark:text-gray-400">
-                    Once your account is deleted, all of its resources and data
-                    will be permanently deleted. Please enter your password to
-                    confirm you would like to permanently delete your account.
+                <p class="text-xs text-gray-600 dark:text-gray-300 leading-relaxed mb-4">
+                    Apakah Anda yakin ingin menghapus akun operator ini? Masukkan kata sandi Anda untuk mengonfirmasi bahwa Anda benar-benar pemilik sah akun ini.
                 </p>
 
-                <div class="mt-6">
-                    <InputLabel
-                        for="password"
-                        value="Password"
-                        class="sr-only"
-                    />
+                <div class="mt-4">
+                    <label for="delete_password" class="block text-xs font-bold text-gray-700 dark:text-gray-300 uppercase tracking-wider mb-1.5">
+                        Konfirmasi Kata Sandi
+                    </label>
 
-                    <TextInput
-                        id="password"
+                    <input
+                        id="delete_password"
                         ref="passwordInput"
                         v-model="form.password"
                         type="password"
-                        class="mt-1 block w-3/4"
-                        placeholder="Password"
+                        class="w-full px-4 py-2.5 rounded-xl bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 text-gray-900 dark:text-white text-sm placeholder-gray-400 focus:ring-2 focus:ring-rose-500 focus:border-transparent transition-all"
+                        placeholder="Masukkan kata sandi akun Anda"
                         @keyup.enter="deleteUser"
                     />
 
-                    <InputError :message="form.errors.password" class="mt-2" />
+                    <InputError :message="form.errors.password" class="mt-1.5" />
                 </div>
 
-                <div class="mt-6 flex justify-end">
-                    <SecondaryButton @click="closeModal">
-                        Cancel
-                    </SecondaryButton>
+                <div class="mt-6 flex justify-end gap-3">
+                    <button
+                        type="button"
+                        @click="closeModal"
+                        class="px-4 py-2.5 rounded-xl bg-gray-100 hover:bg-gray-200 dark:bg-gray-800 dark:hover:bg-gray-700 text-gray-700 dark:text-gray-300 font-bold text-xs transition-colors"
+                    >
+                        Batal
+                    </button>
 
-                    <DangerButton
-                        class="ms-3"
-                        :class="{ 'opacity-25': form.processing }"
+                    <button
+                        type="button"
                         :disabled="form.processing"
                         @click="deleteUser"
+                        class="px-5 py-2.5 rounded-xl bg-rose-600 hover:bg-rose-700 active:scale-[0.99] text-white font-bold text-xs shadow-sm transition-all inline-flex items-center gap-2 disabled:opacity-50"
                     >
-                        Delete Account
-                    </DangerButton>
+                        <span v-if="form.processing" class="inline-block w-3.5 h-3.5 border-2 border-white border-t-transparent rounded-full animate-spin"></span>
+                        <span v-else class="material-symbols-outlined text-[17px]">delete_forever</span>
+                        <span>{{ form.processing ? 'Menghapus...' : 'Hapus Akun Permanen' }}</span>
+                    </button>
                 </div>
             </div>
         </Modal>
