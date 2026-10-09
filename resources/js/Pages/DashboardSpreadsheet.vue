@@ -384,7 +384,7 @@ const surveiBelumPercentage = computed(() => {
                         </div>
                         <div class="mt-4 mb-2 flex items-baseline justify-between">
                             <div class="font-telemetry-data text-3xl sm:text-4xl text-gray-950 dark:text-white font-extrabold tracking-tight">
-                                {{ formatNumber(kpis.idpel_meter_count+kpis.idpel_abonemen_count) }}
+                                {{ formatNumber(kpis.total_idpel) }}
                             </div>
                             <span class="inline-flex items-center px-2 py-0.5 rounded-md bg-blue-50 dark:bg-blue-950/40 text-blue-700 dark:text-blue-400 font-caption text-[11px] font-bold border border-blue-200/50">
                                 IDPEL Unik

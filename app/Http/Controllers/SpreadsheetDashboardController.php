@@ -72,8 +72,8 @@ class SpreadsheetDashboardController extends Controller
         $totalItems = \App\Models\SpreadsheetPju::count();
         $totalIdpel = \App\Models\SpreadsheetPju::whereNotNull('idpel')->where('idpel', '!=', '')->distinct('idpel')->count('idpel');
 
-        $idpelMeterCount = \App\Models\SpreadsheetPju::where('status_meter', 'METER')->distinct('idpel')->count('idpel');
-        $idpelAbonemenCount = \App\Models\SpreadsheetPju::where(function ($q) {
+        $idpelMeterCount = \App\Models\SpreadsheetPju::whereNotNull('idpel')->where('idpel', '!=', '')->where('status_meter', 'METER')->distinct('idpel')->count('idpel');
+        $idpelAbonemenCount = \App\Models\SpreadsheetPju::whereNotNull('idpel')->where('idpel', '!=', '')->where(function ($q) {
             $q->where('status_meter', '!=', 'METER')->orWhereNull('status_meter');
         })->distinct('idpel')->count('idpel');
 
