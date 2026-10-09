@@ -11,26 +11,87 @@ class IdpelController extends Controller
      */
     public function index(Request $request)
     {
-        $query = \App\Models\Idpel::with(['district', 'substations']);
+        $query = \App\Models\SpreadsheetPju::query()
+            ->selectRaw("
+                idpel,
+                MAX(alamat) as alamat,
+                MAX(unit_pln) as unit_pln,
+                MAX(status_meter) as status_meter,
+                COUNT(*) as total_titik,
+                SUM(besar_daya) as total_daya,
+                MAX(survei) as survei,
+                MAX(meterisasi) as meterisasi,
+                MAX(lat) as lat,
+                MAX(lng) as lng
+            ")
+            ->whereNotNull('idpel')
+            ->where('idpel', '!=', '');
 
-        if ($request->has('search') && $request->search != '') {
-            $query->where('idpel_number', 'like', '%' . $request->search . '%')
-                  ->orWhere('name', 'like', '%' . $request->search . '%');
-        }
-
-        if ($request->has('district') && $request->district != 'all') {
-            $query->whereHas('district', function ($q) use ($request) {
-                $q->where('id', $request->district); // assuming district dropdown sends district ID
+        // Filter status_meter: meter atau non-meter
+        $status = $request->input('status', 'all');
+        if ($status === 'meter') {
+            $query->where('status_meter', 'METER');
+        } elseif ($status === 'non-meter' || $status === 'non_meter') {
+            $query->where(function ($q) {
+                $q->where('status_meter', '!=', 'METER')->orWhereNull('status_meter');
             });
         }
 
-        $idpels = $query->paginate(10)->withQueryString();
-        $districts = \App\Models\District::all();
+        // Filter unit PLN
+        $unitPln = $request->input('unit_pln', 'all');
+        if (!empty($unitPln) && $unitPln !== 'all') {
+            $query->where('unit_pln', $unitPln);
+        }
+
+        // Search IDPEL, Alamat, atau Unit PLN
+        $search = $request->input('search');
+        if (!empty($search)) {
+            $query->where(function ($q) use ($search) {
+                $q->where('idpel', 'like', "%{$search}%")
+                  ->orWhere('alamat', 'like', "%{$search}%")
+                  ->orWhere('unit_pln', 'like', "%{$search}%");
+            });
+        }
+
+        $query->groupBy('idpel')->orderBy('idpel', 'asc');
+
+        $idpels = $query->paginate(15)->withQueryString();
+
+        // Statistik KPI untuk IDPEL
+        $totalIdpelCount = \App\Models\SpreadsheetPju::whereNotNull('idpel')
+            ->where('idpel', '!=', '')
+            ->count(\Illuminate\Support\Facades\DB::raw('DISTINCT idpel'));
+
+        $meterCount = \App\Models\SpreadsheetPju::whereNotNull('idpel')
+            ->where('idpel', '!=', '')
+            ->where('status_meter', 'METER')
+            ->count(\Illuminate\Support\Facades\DB::raw('DISTINCT idpel'));
+
+        $nonMeterCount = \App\Models\SpreadsheetPju::whereNotNull('idpel')
+            ->where('idpel', '!=', '')
+            ->where(function ($q) {
+                $q->where('status_meter', '!=', 'METER')->orWhereNull('status_meter');
+            })
+            ->count(\Illuminate\Support\Facades\DB::raw('DISTINCT idpel'));
+
+        $units = \App\Models\SpreadsheetPju::whereNotNull('unit_pln')
+            ->where('unit_pln', '!=', '')
+            ->distinct()
+            ->pluck('unit_pln');
 
         return \Inertia\Inertia::render('Idpels/Index', [
             'idpels' => $idpels,
-            'districts' => $districts,
-            'filters' => $request->only(['search', 'district']),
+            'units' => $units,
+            'kpis' => [
+                'total' => $totalIdpelCount,
+                'meter' => $meterCount,
+                'non_meter' => $nonMeterCount,
+            ],
+            'filters' => [
+                'search' => $search ?? '',
+                'status' => $status,
+                'unit_pln' => $unitPln,
+            ],
         ]);
     }
 
